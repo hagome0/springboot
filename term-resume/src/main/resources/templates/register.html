@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/layout}">
+
+<div layout:fragment="content">
+
+    <div style="padding: 10% 15%;">
+        <form th:action="@{/register}" method="post">
+
+            <div class="form-group">
+                <label>Role</label>
+                <input class="form-control" name="role" th:value="${vo.role}"  placeholder="Role text here." />
+            </div>
+		
+            <div class="form-group">
+                <label>Project</label>
+                <input class="form-control" name="project" th:value="${vo.project}"  placeholder="Project text here." />
+            </div>
+            
+            
+            <div class="form-group">
+                <label>Content</label>
+                <textarea class="form-control" rows="3" name="content" th:text="${vo.content}" placeholder="Content text here."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Date</label> <input class="form-control" name="Date" th:value="${vo.date}" placeholder="Date text here."/>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Button</button>
+            <button type="reset" class="btn btn-warning">Reset Button</button>
+        </form>
+
+    </div>
+
+</div>
